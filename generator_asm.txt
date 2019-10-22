@@ -1,0 +1,69 @@
+; _DWORD __cdecl gen_serial(char *)
+.text:00401500                 public __Z10gen_serialPc
+.text:00401500 __Z10gen_serialPc proc near             ; CODE XREF: ok_serial(char *,char *)+Cvp
+.text:00401500
+.text:00401500 var_1A          = byte ptr -1Ah
+.text:00401500 var_19          = byte ptr -19h
+.text:00401500 var_18          = dword ptr -18h
+.text:00401500 var_14          = dword ptr -14h
+.text:00401500 var_10          = dword ptr -10h
+.text:00401500 var_A           = byte ptr -0Ah
+.text:00401500 var_9           = byte ptr -9
+.text:00401500 var_8           = dword ptr -8
+.text:00401500 var_4           = dword ptr -4
+.text:00401500 arg_0           = dword ptr  8
+.text:00401500
+.text:00401500                 push    ebp
+.text:00401501                 mov     ebp, esp
+.text:00401503                 sub     esp, 32
+.text:00401506                 mov     byte ptr [ebp-10], 12
+.text:0040150A                 mov     dword ptr [ebp-4], 4546477
+.text:00401511                 mov     dword ptr [ebp-16], 44334422
+.text:00401518                 mov     dword ptr [ebp-20], 19
+.text:0040151F                 mov     dword ptr [ebp-24], 136
+.text:00401526                 mov     eax, [ebp+8]
+.text:00401529                 mov     [ebp-8], eax
+.text:0040152C                 mov     byte ptr [ebp-25], 0
+.text:00401530                 jmp     short loc_401574
+.text:00401532 ; ---------------------------------------------------------------------------
+.text:00401532
+.text:00401532 loc_401532:                             ; CODE XREF: gen_serial(char *)+7Cvj
+.text:00401532                 mov     eax, [ebp+var_8]
+.text:00401535                 movzx   eax, byte ptr [eax]
+.text:00401538                 mov     [ebp+var_1A], al
+.text:0040153B                 cmp     [ebp+var_1A], 6Dh
+.text:0040153F                 jle     short loc_401551
+.text:00401541                 mov     eax, [ebp+var_18]
+.text:00401544                 mov     edx, eax
+.text:00401546                 movzx   eax, [ebp+var_1A]
+.text:0040154A                 xor     eax, edx
+.text:0040154C                 mov     [ebp+var_9], al
+.text:0040154F                 jmp     short loc_40155F
+.text:00401551 ; ---------------------------------------------------------------------------
+.text:00401551
+.text:00401551 loc_401551:                             ; CODE XREF: gen_serial(char *)+3F^j
+.text:00401551                 mov     eax, [ebp+var_14]
+.text:00401554                 mov     edx, eax
+.text:00401556                 movzx   eax, [ebp+var_1A]
+.text:0040155A                 xor     eax, edx
+.text:0040155C                 mov     [ebp+var_9], al
+.text:0040155F
+.text:0040155F loc_40155F:                             ; CODE XREF: gen_serial(char *)+4F^j
+.text:0040155F                 movzx   eax, [ebp+var_9]
+.text:00401563                 add     eax, 1
+.text:00401566                 mov     [ebp+var_9], al
+.text:00401569                 movsx   eax, [ebp+var_9]
+.text:0040156D                 add     [ebp+var_4], eax
+.text:00401570                 add     [ebp+var_8], 1
+.text:00401574
+.text:00401574 loc_401574:                             ; CODE XREF: gen_serial(char *)+30^j
+.text:00401574                 mov     eax, [ebp+var_8]
+.text:00401577                 movzx   eax, byte ptr [eax]
+.text:0040157A                 test    al, al
+.text:0040157C                 jnz     short loc_401532
+.text:0040157E                 mov     eax, [ebp+var_10]
+.text:00401581                 xor     [ebp+var_4], eax
+.text:00401584                 mov     eax, [ebp+var_4]
+.text:00401587                 leave
+.text:00401588                 retn
+.text:00401588 __Z10gen_serialPc endp
