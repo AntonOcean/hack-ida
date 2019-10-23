@@ -1,0 +1,38 @@
+//  disasm  -- show blocks  --  show stats
+
+char* __Z10gen_serialPc(
+    signed char* _a4                       // _cfa_4
+)
+{// addr = 0x00401500
+    signed char* _v16;                     // _cfa_fffffff0
+    signed int _v20;                       // _cfa_ffffffec
+    signed int _v24;                       // _cfa_ffffffe8
+    signed int _v25;                       // _cfa_ffffffe7
+    signed char _v26;                      // _cfa_ffffffe6
+    signed char _v27;                      // _cfa_ffffffe5
+    signed char _v28;                      // _cfa_ffffffe4
+    intOrPtr _v32;                         // _cfa_ffffffe0
+    intOrPtr _v36;                         // _cfa_ffffffdc
+    _unknown_ _v40;                        // _cfa_ffffffd8 (outparam)
+
+    _v16 = _a4;
+    _v20 = 0;
+    _v24 = 0;
+    _v26 = 250;
+    _v27 = 17;
+    _v25 = 0;
+    while(( *_v16 & 255) != 0) {
+        _v28 =  *_v16 & 255;
+        _v20 = _v20 + ((_v25 & 255) << 2);
+        _v20 = _v26 & 255 ^ _v20 - _v28;
+        _v24 = _v24 + ((_v25 & 255) << 3);
+        _v20 = _v27 & 255 ^ _v24 - _v28;
+        _v25 = _v28 & 255;
+        _v16 =  &(_v16[1]);
+    }
+    _v32 = (_v24 >> 31 ^ _v24) - (_v24 >> 31);
+    _v36 = (_v20 >> 31 ^ _v20) - (_v20 >> 31);
+    _sprintf("XXXXXXXXXXXXXXXXXXXXXXXXX", 4210688);
+    return "XXXXXXXXXXXXXXXXXXXXXXXXX";
+}
+
